@@ -17,7 +17,6 @@ let organisedverseandnumber = verseandnumber.split('\n');
 
 let verses = organisedverseandnumber.filter((e, i) =>  i % 2 != 0)
 
-console.log(organisedverseandnumber);
 console.log(verses);
 // let i = 1;
 // let verseText = null;
