@@ -13,11 +13,28 @@ let everythingOnPage = await page.evaluate(function() {
 });
 
 let verseandnumber = everythingOnPage.slice(130,-427);
-let organisedverseandnumber = verseandnumber.split('\n');
+let tester = verseandnumber.slice(1,14);
 
-let verses = organisedverseandnumber.filter((e, i) =>  i % 2 != 0)
+if (tester === 'Kapittul 1/50') {
+  let modifiedverseandnumber = verseandnumber.slice(28,-1);
 
-console.log(verses);
+  let organisedverseandnumber = modifiedverseandnumber.split('\n');
+
+  let verses = organisedverseandnumber.filter((e, i) =>  i % 2 == 0)
+  console.log(verses+ "this");
+  console.log(verses[30]);
+
+} else {
+  let organisedverseandnumber = verseandnumber.split('\n');
+
+  let verses = organisedverseandnumber.filter((e, i) =>  i % 2 != 0)
+  console.log(verses + "that");
+  console.log(verses[30]);
+} 
+
+//console.log(verses);
+
+
 // let i = 1;
 // let verseText = null;
 // let FM1 = [];
